@@ -4,6 +4,9 @@
 // summary:	This class will scan a chosen subreddit's latest batch of posts for a chosen keyword. If
 // that keyword is found it will send an email via GMail to the provided address (SMS can be sent
 // via GMail if the correct domain is used). 
+// IMPORTANT: The GMail account must be set to allow less secure apps to access the
+///             account. See:
+///             https://support.google.com/accounts/answer/6010255?hl=en
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
