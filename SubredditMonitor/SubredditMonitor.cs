@@ -21,10 +21,11 @@ namespace SubredditMonitor
     class SubredditMonitor
     {
         //SET THESE VARS TO SUCCESSFULLY SEND AN EMAIL
-        public string gmailRecipient = ""; //ex: 8887776666@vtext.com or 8887776666@txt.att.net for sms
-        public string gmailUsername = ""; //ex: blabla@gmail.com
-        public string gmailPw = ""; //ex: hunter1
-        public string gmailSubject = ""; //ex: Subreddit Monitor
+        private string gmailRecipient = ""; //ex: 8887776666@vtext.com or 8887776666@txt.att.net for sms
+        private string gmailUsername = ""; //ex: blabla@gmail.com
+        private string gmailPw = ""; //ex: hunter1
+        private string gmailSubject = "Subreddit Monitor"; //ex: Subreddit Monitor
+
 
         static void Main(string[] args)
         {
@@ -85,7 +86,7 @@ namespace SubredditMonitor
             }
             catch (Exception ex)
             {
-                monitor. SendEmailWithBody("Exception, execution stopped: " + ex.ToString());
+                monitor.SendEmailWithBody("Exception, execution stopped: " + ex.ToString());
             }
         }
 
@@ -125,6 +126,8 @@ namespace SubredditMonitor
             }
             catch (Exception ex)
             {
+                Console.WriteLine("********");
+                Console.WriteLine(DateTime.Now + ": Error sending email - " + ex.Message);
             }
         }
 
